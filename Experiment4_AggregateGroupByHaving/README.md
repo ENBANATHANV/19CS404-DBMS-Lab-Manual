@@ -38,123 +38,155 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+-- Write a SQL query to find the number of employees whose age is greater than 32.
 
 ```sql
--- Paste your SQL code below for Question 1
+-- select count(age) AS COUNT
+from employee
+where age>32;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="307" height="276" alt="image" src="https://github.com/user-attachments/assets/fd91703a-9ae7-4c00-88c0-813f41d80ab5" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- Write a SQL query to find the customer with longest name?
 
 ```sql
--- Paste your SQL code below for Question 2
+-- select name , max(LENGTH(name)) as length
+from customer
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="596" height="272" alt="image" src="https://github.com/user-attachments/assets/2e731306-2b37-48e6-990d-1293d7ca6077" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- Write a SQL query to find the difference between the maximum and minimum price of fruits?
 
 ```sql
--- Paste your SQL code below for Question 3
+-- select max(price)-min(price) as price_diff
+from fruits
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="301" height="270" alt="image" src="https://github.com/user-attachments/assets/e17fd7c8-4e0f-425e-8f57-ccde85ecb109" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- What is the total number of appointments scheduled for each day?
 
 ```sql
--- Paste your SQL code below for Question 4
+-- SELECT DATE(AppointmentDateTime) AS AppointmentDate  , COUNT(*) AS TotalAppointments
+FROM Appointments 
+GROUP BY AppointmentDateTime;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="702" height="588" alt="image" src="https://github.com/user-attachments/assets/4eaed043-5834-4998-a2e4-32d0f9df8bf8" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- How many prescriptions were written for each medication?
 
 ```sql
--- Paste your SQL code below for Question 5
+-- select Medication ,count(Medication) as TotalPrescriptions
+from Prescriptions 
+group by Medication;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="683" height="674" alt="image" src="https://github.com/user-attachments/assets/2a7cca6d-d541-449e-93ec-40862afe5ce1" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- Write SQL query to extract the email domain from each patient's email address and count the number of patients with the same email domain.
 
 ```sql
--- Paste your SQL code below for Question 6
+-- SELECT SUBSTR(Email, INSTR(Email, '@')+1) as EmailDomain  , count(*) as TotalPatients
+from Patients 
+group by EmailDomain;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="562" height="311" alt="image" src="https://github.com/user-attachments/assets/36132cfe-6f01-4cb2-aa97-27867de96291" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- Write a SQL query to identify the cities (addresses) where the average salary is greater than Rs. 5000, as per the "customer1" table.
 
 ```sql
--- Paste your SQL code below for Question 7
+-- select address , AVG(salary)
+from customer1
+group by address
+having AVG(salary)>5000;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="513" height="380" alt="image" src="https://github.com/user-attachments/assets/6966b711-217d-4bcd-8066-f34e2ffe148b" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Write the SQL query that accomplishes the selection of average price for each category from the "products" table and includes only those products where the average price falls between 10 and 15.
 
 ```sql
--- Paste your SQL code below for Question 8
+-- select category_id  , AVG(Price) 
+from products
+group by category_id
+having AVG(Price) between 10 and 15;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="537" height="300" alt="image" src="https://github.com/user-attachments/assets/c53d4622-2f22-42b2-b141-866a2cbe8f89" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- Write the SQL query that accomplishes the selection of total cost of all products in each category from the "products" table and includes only those products where the total cost is greater than 50.
 
 ```sql
--- Paste your SQL code below for Question 9
+-- select category_id  , sum(price) as Total_Cost
+from products
+group by category_id
+having sum(price)>50;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="507" height="297" alt="image" src="https://github.com/user-attachments/assets/95b2da74-43f1-4967-988d-387653fc2fd5" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Write the SQL query that accomplishes the grouping of data by age, calculates the average income for each age group, and includes only those age groups where the average income falls between 300,000 and 500,000.
 
 ```sql
--- Paste your SQL code below for Question 10
+-- select age , AVG(income)
+from employee
+group by age
+having AVG(income) between 300000 and 500000;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="514" height="291" alt="image" src="https://github.com/user-attachments/assets/cdb21baa-a10b-4418-a936-20db3ea8a00a" />
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6b6b5e56-a2f9-4a96-9bd8-584a12d3e3cd" />
+
 
 
 ## RESULT
