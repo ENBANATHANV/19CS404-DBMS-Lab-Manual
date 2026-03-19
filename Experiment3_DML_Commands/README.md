@@ -47,123 +47,152 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+-- Write a SQL query to Delete All Doctors with a NULL Specialization
+Sample table: Doctors
+attributes : doctor_id, first_name, last_name, specialization
 
 ```sql
--- Paste your SQL code below for Question 1
+-- DELETE FROM Doctors
+WHERE specialization IS NULL;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1231" height="916" alt="image" src="https://github.com/user-attachments/assets/306f701f-dc3c-433f-9341-7a5e83cc73e3" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+--Write a SQL query to retrieve the details of all customers whose ID belongs to any of the values 3007, 3008 or 3009. Return customer_id, cust_name, city, grade, and salesman_id.
 
 ```sql
--- Paste your SQL code below for Question 2
+-- SELECT customer_id, cust_name, city, grade, salesman_id
+FROM customer
+WHERE customer_id IN (3007,3008,3009);
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1144" height="332" alt="image" src="https://github.com/user-attachments/assets/50e784a3-1f5c-4062-b176-d7527569a1e1" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- Write a query to find the names of employees that begin with ‘S’ from EmployeeInfo table.
 
 ```sql
--- Paste your SQL code below for Question 3
+-- select *
+FROM EmployeeInfo 
+WHERE EmpFname LIKE 'S%';
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1292" height="152" alt="image" src="https://github.com/user-attachments/assets/43a6ff9f-7f12-4d0a-a19f-9aa3778ec1ef" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- Write a SQL query to Delete customers with 'GRADE' 3 or 'AGENT_CODE' 'A008' whose 'OUTSTANDING_AMT' is less than 5000
 
 ```sql
--- Paste your SQL code below for Question 4
+-- DELETE FROM Customer
+WHERE (GRADE = 3 OR AGENT_CODE = 'A008') AND OUTSTANDING_AMT <5000.00;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1038" height="112" alt="image" src="https://github.com/user-attachments/assets/c43953ed-f607-4e63-8104-b575bfcf84ab" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+-- Write a SQL query to find the details of those salespeople who live in cities other than Paris and Rome. Return salesman_id, name, city, commission
 
 ```sql
--- Paste your SQL code below for Question 5
+-- SELECT *
+FROM salesman
+WHERE city NOT IN ('Paris' , 'Rome');
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="796" height="305" alt="image" src="https://github.com/user-attachments/assets/f3fa8161-507f-418f-b2fa-2db9ab553123" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+-- Write a SQL query to calculate the discounted price for each product. Return product_id, original_price, discount_percentage, and discounted_price.
 
 ```sql
--- Paste your SQL code below for Question 6
+-- SELECT product_id, original_price, discount_percentage, original_price*(1-discount_percentage) AS discounted_price
+FROM Products
+
 ```
 
 **Output:**
+<img width="1070" height="336" alt="image" src="https://github.com/user-attachments/assets/64be9c50-a59a-4299-86ea-e904446ffe1d" />
 
-![Output6](output.png)
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- Write a SQL query to Select all patients whose name starts with A.
 
 ```sql
--- Paste your SQL code below for Question 7
+-- SELECT *
+FROM Patients
+WHERE first_name  LIKE 'A%';7
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1244" height="221" alt="image" src="https://github.com/user-attachments/assets/95647126-4d29-4120-9d92-11b6a311cb18" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Write a SQL query to Get the employee names where the first letter of each word is the same.
 
 ```sql
--- Paste your SQL code below for Question 8
+-- SELECT ename 
+FROM emp
+WHERE instr (ename, ' ')>0 AND substr(ename, 1,1) = substr(ename, instr(ename , ' ')+1 ,1);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="276" height="261" alt="image" src="https://github.com/user-attachments/assets/e8851c9c-f5c9-49c6-8ac1-75333332d6ad" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- Write a SQL statement to Increase quantity of all products by 10% to adjust for surplus stock counted
 
 ```sql
--- Paste your SQL code below for Question 9
+-- UPDATE Products 
+SET quantity = quantity *(1.10);
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1081" height="304" alt="image" src="https://github.com/user-attachments/assets/6c0df761-e721-487d-8f2b-2d102491014d" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Write a SQL query to reduce the reorder level by 30% where cost price is more than 50 and quantity in stock is less than 100 in the products table.
 
 ```sql
--- Paste your SQL code below for Question 10
+-- UPDATE Products 
+SET reorder_lvl = reorder_lvl*(.70)
+WHERE cost_price >50 AND quantity  <100;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1250" height="214" alt="image" src="https://github.com/user-attachments/assets/171ce441-6c2f-41c8-9b7d-a4527545065b" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/4a3395c4-6ff0-4689-a349-00e465b52674" />
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
