@@ -54,10 +54,10 @@ ON table1.column = table2.column;
 
 **Question 1**
 --
--- Write the SQL query that achieves the selection of all columns from the "patients" table (aliased as "p"), with an inner join on the "patient_id" column and a condition filtering for test results with a test date between '2024-03-01' and '2024-03-31'.
+Write the SQL query that achieves the selection of all columns from the "patients" table (aliased as "p"), with an inner join on the "patient_id" column and a condition filtering for test results with a test date between '2024-03-01' and '2024-03-31'.
 
 ```sql
--- select p.*
+select p.*
 from patients p
 inner join TEST_RESULTS t on p.patient_id = t.patient_id
 where test_date between '2024-03-01' and '2024-03-31';
@@ -70,10 +70,10 @@ where test_date between '2024-03-01' and '2024-03-31';
 
 **Question 2**
 ---
--- Write the SQL query that achieves the selection of the first name from the "patients" table (aliased as "patient_name"), with an inner join on the "doctor_id" column and conditions filtering for patients whose doctor has the first name 'Emily', last name 'Johnson', and a non-null discharge date.
+Write the SQL query that achieves the selection of the first name from the "patients" table (aliased as "patient_name"), with an inner join on the "doctor_id" column and conditions filtering for patients whose doctor has the first name 'Emily', last name 'Johnson', and a non-null discharge date.
 
 ```sql
--- select p.first_name as patient_name
+select p.first_name as patient_name
 from PATIENTS  p
 inner join DOCTORS d on p.doctor_id = d.doctor_id
 where (d.first_name = 'Emily' AND d.last_name ='Johnson') and p.discharge_date not null;
@@ -86,7 +86,7 @@ where (d.first_name = 'Emily' AND d.last_name ='Johnson') and p.discharge_date n
 
 **Question 3**
 ---
--- Write the SQL query that achieves the selection of all columns from the "customer" table (aliased as "c"), with a left join on the "customer_id" column and a condition filtering for orders with an order date between '2012-08-01' and '2012-08-30'.
+Write the SQL query that achieves the selection of all columns from the "customer" table (aliased as "c"), with a left join on the "customer_id" column and a condition filtering for orders with an order date between '2012-08-01' and '2012-08-30'.
 
 ```sql
 -- select c.*
@@ -102,10 +102,10 @@ where ord_date BETWEEN '2012-08-01' and '2012-08-30';
 
 **Question 4**
 ---
--- Write the SQL query that achieves the selection of the first name from the "patients" table (aliased as "patient_name") and all columns from the "test_results" table (aliased as "t"), with an inner join on the "patient_id" column and a condition filtering for test results with the test name 'Blood Pressure'.
+ Write the SQL query that achieves the selection of the first name from the "patients" table (aliased as "patient_name") and all columns from the "test_results" table (aliased as "t"), with an inner join on the "patient_id" column and a condition filtering for test results with the test name 'Blood Pressure'.
 
 ```sql
--- select p.first_name as patient_name,t.*     
+ select p.first_name as patient_name,t.*     
 from PATIENTS p
 inner join TEST_RESULTS t on p.patient_id = t.patient_id
 where test_name = 'Blood Pressure';
@@ -118,11 +118,11 @@ where test_name = 'Blood Pressure';
 
 **Question 5**
 ---
--- Write the SQL query that accomplishes the selection of the first name from the "patients" table and all columns from the "surgeries" table, with an inner join on the "patient_id" column and a condition filtering for patients with the first name 'Alice'.
+Write the SQL query that accomplishes the selection of the first name from the "patients" table and all columns from the "surgeries" table, with an inner join on the "patient_id" column and a condition filtering for patients with the first name 'Alice'.
 
 
 ```sql
--- select p.first_name , c.*
+select p.first_name , c.*
 from PATIENTS p
 inner join SURGERIES  c on p.patient_id=c.patient_id
 where p.first_name ='Alice';
@@ -135,10 +135,10 @@ where p.first_name ='Alice';
 
 **Question 6**
 ---
--- Write the SQL query that achieves the selection of the "cust_name" column from the "customer" table (aliased as "c") and the "commission" column from the "salesman" table (aliased as "s"), with a left join on the "salesman_id" column.
+Write the SQL query that achieves the selection of the "cust_name" column from the "customer" table (aliased as "c") and the "commission" column from the "salesman" table (aliased as "s"), with a left join on the "salesman_id" column.
 
 ```sql
--- select c.cust_name , s.commission
+select c.cust_name , s.commission
 from Customer c
 inner join Salesman  s on c.salesman_id=s.salesman_id;
 ```
@@ -150,10 +150,10 @@ inner join Salesman  s on c.salesman_id=s.salesman_id;
 
 **Question 7**
 ---
--- write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
+write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ```sql
--- select s.name as Salesman,c.cust_name,c.city    
+select s.name as Salesman,c.cust_name,c.city    
 from salesman s
 inner join customer c on s.city   = c.city   ;
 ```
@@ -165,11 +165,11 @@ inner join customer c on s.city   = c.city   ;
 
 **Question 8**
 ---
--- Write the SQL query that achieves the selection of all columns from the "customer" table (aliased as "c"), with a left join on the "customer_id" column and a condition filtering for orders with an order date later than '2012-08-17'.
+Write the SQL query that achieves the selection of all columns from the "customer" table (aliased as "c"), with a left join on the "customer_id" column and a condition filtering for orders with an order date later than '2012-08-17'.
 
 
 ```sql
--- select c.*
+select c.*
 from CUSTOMER  c
 left join ORDERS  o on c.customer_id =o.customer_id
 where ord_date > '2012-08-17';
@@ -182,10 +182,10 @@ where ord_date > '2012-08-17';
 
 **Question 9**
 ---
--- Write the SQL query that accomplishes the selection of all columns from the "patients" table and the first name of doctors from the "doctors" table, with an inner join on the "doctor_id" column.
+Write the SQL query that accomplishes the selection of all columns from the "patients" table and the first name of doctors from the "doctors" table, with an inner join on the "doctor_id" column.
 
 ```sql
--- select p.*, d.first_name as doctor_name
+select p.*, d.first_name as doctor_name
 from PATIENTS  p
 inner join DOCTORS  d on p.doctor_id=d.doctor_id;
 ```
@@ -197,10 +197,10 @@ inner join DOCTORS  d on p.doctor_id=d.doctor_id;
 
 **Question 10**
 ---
--- Write the SQL query that achieves the selection of the "name" column from the "salesman" table (aliased as "s"), with a left join on the "salesman_id" column and a condition filtering for customers in the city 'New York'.
+Write the SQL query that achieves the selection of the "name" column from the "salesman" table (aliased as "s"), with a left join on the "salesman_id" column and a condition filtering for customers in the city 'New York'.
 
 ```sql
--- select s.name as name 
+select s.name as name 
 from salesman s
 left join Customer  c on c.salesman_id = s.salesman_id
 where c.city = 'New York';
